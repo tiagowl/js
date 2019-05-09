@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS</title>
+</head>
+<body>
+    
+    <div id="app">
+        <input type="text" name="nome" id="nome" class="nome">
+        <button class="botao" onclick="mostraAlerta()" ></button>
+    </div>
+
+    <script>
+        function mostraAlerta(){
+            alert("O Botão foi pressionado");
+        }
+    </script>
+
+    <script>
+        // referenciando um elemento pelo id
+        //document = DOM
+        var inputElement = document.getElementById('nome');
+
+        // referenciando pela tag com atributo 0, que pega o primeiro input que aparece
+        //Retorna array sempre
+        var btnElement = document.getElementsByTagName('input')[0];
+
+        // referenciando pela classe
+        var btnElement = document.getElementsByClassName('nome');
+        
+        //Percorre a dom até o elemento requerido
+        var inputElement = document.querySelector('div#app input');
+        var inputElement = document.querySelector('input[name=nome]');
+        var btnElement = document.querySelector('button.botao');
+
+        //programando o clique no botão
+        btnElement.onclick = function(){
+            // colocando numa variavel o valor digitado no input
+            var text = inputElement.value;
+            alert("Botão foi clicado");
+        }
+    </script>
+
+    <script>
+        //criando um elemento do tipo link
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'index.html');
+        var textElement = document.createTextNode('Acesse meu site');
+
+        //colocando a variavel com o texto dentro do link a
+        linkElement.appendChild(textElement);
+
+        // colocando o texto na tag a
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(linkElement);
+
+    </script>
+
+    <div id="app" >
+        <div class="box"></div>
+    </div>
+    <script>
+        var boxElement = document.querySelector('.box');
+
+        boxElement.style.width = 100;
+        boxElement.style.height = 100;
+        boxElement.style.backgroundColor = '#f00';
+    </script>
+
+</body>
+</html>
